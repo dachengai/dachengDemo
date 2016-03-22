@@ -39,6 +39,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public int getItemCount() {
         return mDatas.size();
     }
+
+    @Override
+    public int getItemViewType(int position) {
+        return  mDatas.get(position).type;
+    }
     public void setData( ArrayList<RecyclerViewItemData> datas){
         if(datas != null && datas.size() > 0){
             mDatas.clear();
