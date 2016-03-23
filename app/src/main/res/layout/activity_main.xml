@@ -17,12 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
             android:text="recyclerView"/>
         <Button
             android:id="@+id/act_dialog"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
             android:text="dialog"/>
         <Button
             android:layout_width="match_parent"

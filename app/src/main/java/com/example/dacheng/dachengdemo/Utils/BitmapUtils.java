@@ -1,9 +1,12 @@
 package com.example.dacheng.dachengdemo.Utils;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
 /**
  * Created by dacheng on 16/3/10.
@@ -43,5 +46,19 @@ public class BitmapUtils {
 
         return tempBitmap;
 
+    }
+
+
+    /**
+     * 改变图标颜色
+     * @param context
+     * @param drawable
+     * @param color
+     * @return
+     */
+    public Drawable changeImageColor(Context context,int drawable,int color){
+        Drawable myIcon = context.getResources().getDrawable(drawable);
+        myIcon.setColorFilter(context.getResources().getColor(color), PorterDuff.Mode.SRC_ATOP);
+        return  myIcon;
     }
 }
