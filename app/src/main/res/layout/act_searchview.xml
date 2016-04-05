@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.dacheng.dachengdemo.searchBar.ObservableScrollView
+        android:id="@+id/sv_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#ff0000" />
+
+            <com.example.dacheng.dachengdemo.searchBar.MyListview
+                android:id="@+id/lv_searchview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.dacheng.dachengdemo.searchBar.MyListview>
+        </LinearLayout>
+
+
+    </com.example.dacheng.dachengdemo.searchBar.ObservableScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rv_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00CCFF">
+<ImageView
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="15dp"
+    android:src="@drawable/download"
+    android:layout_width="20dp"
+    android:layout_height="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="#ffffff"
+        android:id="@+id/rv_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="140dp"
+        >
+<ImageView
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="20dp"
+    android:src="@drawable/find"
+    android:layout_width="20dp"
+    android:layout_height="20dp" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+          android:layout_marginRight="20dp"
+            android:src="@drawable/qrcode"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </RelativeLayout>
+</FrameLayout>

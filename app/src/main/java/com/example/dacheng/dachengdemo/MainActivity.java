@@ -8,20 +8,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.dacheng.dachengdemo.customview.CustomViewAct;
 import com.example.dacheng.dachengdemo.dialog.DialogAct;
+import com.example.dacheng.dachengdemo.qrcode.QRCodeAct;
 import com.example.dacheng.dachengdemo.recyclerview.RecyclerViewAct;
+import com.example.dacheng.dachengdemo.searchBar.SearchBarAct;
+import com.example.dacheng.dachengdemo.searchBar.SearchViewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button mRecycler;
     private Button mDialog;
+    private Button mSearchBar;
+    private Button mQRCode;
+    private Button mCustom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDialog = (Button) findViewById(R.id.act_dialog);
         mRecycler = (Button) findViewById(R.id.act_recyclerview);
+        mSearchBar = (Button) findViewById(R.id.act_searchbar);
+        mQRCode = (Button) findViewById(R.id.act_qrcode);
+        mCustom = (Button) findViewById(R.id.act_customview);
         mDialog.setOnClickListener(this);
         mRecycler.setOnClickListener(this);
+        mSearchBar.setOnClickListener(this);
+        mQRCode.setOnClickListener(this);
+        mCustom.setOnClickListener(this);
     }
 
 
@@ -31,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void toAct(Class cls){
         Intent intent = new Intent(this,cls);
-        startActivity(intent);
+        this.startActivity(intent);
     }
 
     @Override
@@ -42,6 +55,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.act_recyclerview:
                 toAct(RecyclerViewAct.class);
+                break;
+            case R.id.act_searchbar:
+                toAct(SearchViewActivity.class);
+                break;
+            case R.id.act_qrcode:
+                toAct(QRCodeAct.class);
+                break;
+            case R.id.act_customview:
+                toAct(CustomViewAct.class);
                 break;
             default:
                 break;

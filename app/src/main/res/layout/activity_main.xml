@@ -27,13 +27,26 @@
             android:background="@drawable/btn_bg"
             android:text="dialog"/>
         <Button
+            android:id="@+id/act_searchbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:text="searchbar"
+            android:background="@drawable/btn_bg"/>
         <Button
+            android:id="@+id/act_qrcode"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="qrcode"/>
+        <Button
+            android:id="@+id/act_customview"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="customview"/>
     </LinearLayout>
 
 
