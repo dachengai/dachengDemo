@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -38,7 +39,7 @@ public class DialogAct extends Activity {
             }
         });
 
-
+        Log.e("test", "DialogAct-----onCreate");
 
 
     }
@@ -60,5 +61,44 @@ public class DialogAct extends Activity {
         lp.height = (int) (screenHeight * 0.60);
         window.setAttributes(lp);
         window.setBackgroundDrawable(new ColorDrawable(0));
+    }
+
+
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("test", "DialogAct-----onRestart");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("test", "DialogAct-----onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("test", "DialogAct-----onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("test", "DialogAct-----onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("test", "DialogAct-----onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("test", "DialogAct-----onDestroy");
     }
 }

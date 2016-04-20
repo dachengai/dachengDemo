@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.dacheng.dachengdemo.R;
+import com.example.dacheng.dachengdemo.customview.progress.CircularProgress;
 
 /**
  * Created by dacheng on 16/4/5.

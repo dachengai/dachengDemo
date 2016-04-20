@@ -47,6 +47,27 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/btn_bg"
             android:text="customview"/>
+        <Button
+            android:id="@+id/act_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="image"/>
+        <Button
+            android:id="@+id/act_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="Login MVP"/>
+        <Button
+            android:id="@+id/act_service"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_bg"
+            android:text="service"/>
     </LinearLayout>
 
 
