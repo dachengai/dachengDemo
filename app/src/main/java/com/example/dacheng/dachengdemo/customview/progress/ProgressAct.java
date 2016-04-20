@@ -1,4 +1,4 @@
-package com.example.dacheng.dachengdemo.customview;
+package com.example.dacheng.dachengdemo.customview.progress;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,7 +21,7 @@ import com.example.dacheng.dachengdemo.customview.progress.CircularProgress;
 /**
  * Created by dacheng on 16/4/5.
  */
-public class CustomViewAct extends Activity {
+public class ProgressAct extends Activity {
     // Views
     ImageView ivDrawable;
     Button btStyle1;

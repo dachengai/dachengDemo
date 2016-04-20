@@ -31,11 +31,13 @@
             android:windowSoftInputMode="stateAlwaysHidden">
 
         </activity>
-        <activity android:name=".customview.CustomViewAct"/>
+        <activity android:name=".customview.progress.ProgressAct"/>
         <activity android:name=".base.image.picasso.ImageAct"/>
         <activity android:name=".mvp.login.LoginActivity"/>
         <activity android:name=".service.ServiceAct"/>
         <service android:name=".service.MyService"/>
+        <activity android:name=".customview.autoscrolltitle.ScrollTitleAct"/>
+        <activity android:name=".customview.CustomAct"/>
     </application>
 
 </manifest>

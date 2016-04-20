@@ -9,7 +9,8 @@ import android.widget.Button;
 
 import com.example.dacheng.dachengdemo.Utils.DemoConst;
 import com.example.dacheng.dachengdemo.base.image.picasso.ImageAct;
-import com.example.dacheng.dachengdemo.customview.CustomViewAct;
+import com.example.dacheng.dachengdemo.customview.CustomAct;
+import com.example.dacheng.dachengdemo.customview.progress.ProgressAct;
 import com.example.dacheng.dachengdemo.dialog.DialogAct;
 import com.example.dacheng.dachengdemo.mvp.login.LoginActivity;
 import com.example.dacheng.dachengdemo.qrcode.QRCodeAct;
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 toAct(QRCodeAct.class);
                 break;
             case R.id.act_customview:
-                toAct(CustomViewAct.class);
+                toAct(CustomAct.class);
                 break;
             case R.id.act_image:
                 toAct(ImageAct.class);

@@ -1,4 +1,4 @@
-package com.example.dacheng.dachengdemo.customview.AutoScrollViewBanner;
+package com.example.dacheng.dachengdemo.customview.autoscrollviewbanner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
