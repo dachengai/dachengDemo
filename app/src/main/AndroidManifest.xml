@@ -38,6 +38,9 @@
         <service android:name=".service.MyService"/>
         <activity android:name=".customview.autoscrolltitle.ScrollTitleAct"/>
         <activity android:name=".customview.CustomAct"/>
+        <activity android:name=".listview.ListViewAct"/>
+        <activity android:name=".customview.imagecoverflow.CoverFlowViewAct"/>
+        <activity android:name=".customview.imagescroll.ScrollImageAct"/>
     </application>
 
 </manifest>

@@ -33,6 +33,20 @@
             android:layout_marginTop="5dp"
             android:text="autoscroll"
             android:background="@drawable/btn_bg"/>
+        <Button
+            android:id="@+id/custom_imgecover"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="图片3d轮播"
+            android:background="@drawable/btn_bg"/>
+        <Button
+            android:id="@+id/custom_image02"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="图片轮播"
+            android:background="@drawable/btn_bg"/>
     </LinearLayout>
 
 

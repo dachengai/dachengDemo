@@ -12,6 +12,7 @@ import com.example.dacheng.dachengdemo.base.image.picasso.ImageAct;
 import com.example.dacheng.dachengdemo.customview.CustomAct;
 import com.example.dacheng.dachengdemo.customview.progress.ProgressAct;
 import com.example.dacheng.dachengdemo.dialog.DialogAct;
+import com.example.dacheng.dachengdemo.listview.ListViewAct;
 import com.example.dacheng.dachengdemo.mvp.login.LoginActivity;
 import com.example.dacheng.dachengdemo.qrcode.QRCodeAct;
 import com.example.dacheng.dachengdemo.recyclerview.RecyclerViewAct;
@@ -25,8 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mQRCode;
     private Button mCustom;
     private Button mImage;
-    private Button mLogin ;
     private Button mService ;
+    private Button mLogin ;
+    private Button mListView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCustom = (Button) findViewById(R.id.act_customview);
         mImage = (Button) findViewById(R.id.act_image);
         mLogin = (Button) findViewById(R.id.act_login);
+        mListView = (Button) findViewById(R.id.act_listview);
         mDialog.setOnClickListener(this);
         mRecycler.setOnClickListener(this);
         mSearchBar.setOnClickListener(this);
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLogin.setOnClickListener(this);
         mService = (Button) findViewById(R.id.act_service);
         mService.setOnClickListener(this);
-
+        mListView.setOnClickListener(this);
     }
 
 
@@ -85,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.act_service:
                 toAct(ServiceAct.class);
+                break;
+            case R.id.act_listview:
+                toAct(ListViewAct.class);
                 break;
             default:
                 break;

@@ -7,6 +7,8 @@ import android.view.View;
 
 import com.example.dacheng.dachengdemo.R;
 import com.example.dacheng.dachengdemo.customview.autoscrolltitle.ScrollTitleAct;
+import com.example.dacheng.dachengdemo.customview.imagecoverflow.CoverFlowViewAct;
+import com.example.dacheng.dachengdemo.customview.imagescroll.ScrollImageAct;
 import com.example.dacheng.dachengdemo.customview.progress.ProgressAct;
 
 /**
@@ -27,6 +29,18 @@ public class CustomAct extends Activity {
             @Override
             public void onClick(View v) {
                 toAct(ScrollTitleAct.class);
+            }
+        });
+        findViewById(R.id.custom_imgecover).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toAct(CoverFlowViewAct.class);
+            }
+        });
+        findViewById(R.id.custom_image02).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toAct(ScrollImageAct.class);
             }
         });
     }
