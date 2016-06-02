@@ -4,7 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
+import android.animation.FloatEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,12 +26,15 @@ import com.example.dacheng.dachengdemo.customview.progress.CircularProgress;
 public class ProgressAct extends Activity {
     // Views
     ImageView ivDrawable;
+    ImageView ivDrawable2;
     Button btStyle1;
     Button btStyle2;
     Button btStyle3;
     Button btStyle4;
-
+    private float progress = 0f;
     CircularProgress drawable;
+    ProgressDrawable progressDrawable;
+
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -38,10 +43,11 @@ public class ProgressAct extends Activity {
             }
             switch (v.getId()) {
                 case R.id.bt_style_1:
-                    currentAnimation = prepareStyle1Animation();
+                   // currentAnimation = prepareStyle1Animation();
+
                     break;
                 case R.id.bt_style_2:
-                    currentAnimation = prepareStyle2Animation();
+
                     break;
                 case R.id.bt_style_3:
                     currentAnimation = prepareStyle3Animation();
@@ -52,7 +58,7 @@ public class ProgressAct extends Activity {
                     break;
 
             }
-            currentAnimation.start();
+
         }
     };
 
@@ -62,12 +68,9 @@ public class ProgressAct extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_customview);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
         ivDrawable = (ImageView) findViewById(R.id.iv_drawable);
+        ivDrawable2 = (ImageView) findViewById(R.id.iv_drawable2);
         btStyle1 = (Button) findViewById(R.id.bt_style_1);
         btStyle2 = (Button) findViewById(R.id.bt_style_2);
         btStyle3 = (Button) findViewById(R.id.bt_style_3);
@@ -79,18 +82,38 @@ public class ProgressAct extends Activity {
                 .setRingColor(getResources().getColor(android.R.color.holo_green_light))
                 .setCenterColor(getResources().getColor(android.R.color.holo_blue_dark))
                 .create();
+        progressDrawable = new ProgressDrawable.Builder().setLineWidth(getResources().getDimensionPixelSize(R.dimen.drawable_ring_size))
+                .setLineColor(getResources().getColor(android.R.color.holo_green_light))
+                .setShape(ProgressDrawable.Shape.RING).create();
         ivDrawable.setImageDrawable(drawable);
-        hookUpListeners();
-    }
+        ivDrawable2.setImageDrawable(progressDrawable);
 
-    private void hookUpListeners() {
-        ivDrawable.setOnClickListener(listener);
-        btStyle1.setOnClickListener(listener);
-        btStyle2.setOnClickListener(listener);
+
+       // ivDrawable.setOnClickListener(listener);
+        btStyle1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress += 0.05f ;
+                if(progress > 1){
+                    progress = 0;
+                }
+
+                drawable.setProgress(progress);
+                progressDrawable.setProgress(progress);
+            }
+        });
+
         btStyle3.setOnClickListener(listener);
         btStyle4.setOnClickListener(listener);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
     }
+
+
 
     /**
      * This animation was intended to keep a pressed state of the Drawable
@@ -171,17 +194,14 @@ public class ProgressAct extends Activity {
 
         ObjectAnimator progressAnimation = ObjectAnimator.ofFloat(drawable, CircularProgress.PROGRESS_PROPERTY,
                 0f, 1f);
-        progressAnimation.setDuration(3600);
-        progressAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        progressAnimation.setEvaluator(new TypeEvaluator() {
+            @Override
+            public Object evaluate(float fraction, Object startValue, Object endValue) {
+                return progress;
+            }
+        });
 
-        ObjectAnimator colorAnimator = ObjectAnimator.ofInt(drawable, CircularProgress.RING_COLOR_PROPERTY,
-                getResources().getColor(android.R.color.holo_red_dark),
-                getResources().getColor(android.R.color.holo_green_light));
-        colorAnimator.setEvaluator(new ArgbEvaluator());
-        colorAnimator.setDuration(3600);
-
-        animation.playTogether(progressAnimation, colorAnimator);
-        return animation;
+        return progressAnimation;
     }
 
     /**
